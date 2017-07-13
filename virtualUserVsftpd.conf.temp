@@ -1,0 +1,3 @@
+#主要是设置local_root,其他未设置的参数使用vsftpd.conf中相应设置
+#path:各个虚拟用户home目录的路径，注意目录的所有者/组，以及权限
+local_root=path

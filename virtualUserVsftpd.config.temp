@@ -1,1 +1,0 @@
-local_root=path   #path:各个虚拟用户home目录的路径，注意目录的所有者/组，以及权限
