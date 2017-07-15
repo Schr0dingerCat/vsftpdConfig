@@ -21,11 +21,11 @@ vsftpd 是“very secure FTP daemon”的缩写，安全性是它的一个最大
 3．安装后续工作
 由于采用源代码方式安装，很多必要的配置文件没有复制到系统中，需要手动复制。
 复制配置文件：
-[root@localhost vsftpd-2.0.3]# cp vsftpd.conf /etc/vsftpd/
+[root@localhost vsftpd-2.0.3]# cp vsftpd.conf /etc
 复制pam验证文件：（多数使用vsftpd的用户在用源代码安装后都会遇到这样的问题：匿名用户可以登录，而本地用户无论怎样设置都无法登录，原因就在于vsftpd采用了PAM验证的方式，需要复制一个验证文件本地用户才能访问。）
-[root@localhost vsftpd-2.0.3]# cp RedHat/vsftpd.pam /etc/pam.d/vsftpd/
+[root@localhost vsftpd-2.0.3]# cp RedHat/vsftpd.pam /etc/pam.d/ftp
 vsftpd的配置
-vsftpd服务器的配置文件为/etc/vsftpd/vsftpd.conf，其配置选项比较多，在此我只选择几个常用的配置选项介绍。
+vsftpd服务器的配置文件为/etc/vsftpd.conf，其配置选项比较多，在此我只选择几个常用的配置选项介绍。
 1．禁止匿名用户访问。
 anonymous_enable=NO
 2．允许本地用户登录并允许其上传文件。
