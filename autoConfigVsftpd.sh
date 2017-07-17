@@ -1,15 +1,22 @@
 #! /bin/bash
-####centos下通过yum安装vsftpd、pam、db4(db_load命令)
-yum install vsftpd
-yum install pam
-yum install db4
-####vsftpd安装成功后，会在/var目录下创建ftp目录。会自动创建名为ftp的用户和组，虚拟用户的映射用户默认使用ftp，
-####如果使用源码安装，则需要执行下列命令：
 
+#SOURCE、YUM方式
+INSTALL_MODE="SOURCE"
+
+if [[ $INSTALL_MODE -eq "YUM" ]];then
+####centos下通过yum安装vsftpd、pam、db4(db_load命令)
+####vsftpd安装成功后，会在/var目录下创建ftp目录。会自动创建名为ftp的用户和组，虚拟用户的映射用户默认使用ftp，
+yum install vsftpd
+else
+####如果使用源码安装，则需要执行下列命令：
 #tar xzvf vsftpd-xxx.tar.gz
 #cd vsftpd-xxx
 #make
 #make install
+fi
+yum install pam
+yum install db4
+
 
 #安装完成后，还需要复制相关配置文件到相关系统路径下
 
